@@ -4,19 +4,24 @@
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Batch Film Wall</title>
-  <link rel="stylesheet" href="styles.css" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+    /* quick fade-in for cinematic feel */
+    body { opacity: 0; transition: opacity 1s ease; }
+    body.loaded { opacity: 1; }
+  </style>
 </head>
 <body>
   <header class="hero">
     <div class="container">
-      <h1>Batch Film Wall</h1>
-      <p class="subtitle">Auto-build film wall from a Google Drive folder</p>
-
+      <h1>🎞️ Batch Film Wall</h1>
+      <p class="subtitle">Auto-generated film gallery powered by Google Drive</p>
+      <small class="hint">Loading your Drive content... please wait.</small>
     </div>
   </header>
 
   <main class="container">
-    <section id="wall" class="grid"></section>
+    <section id="gallery" class="grid"></section>
   </main>
 
   <!-- Modal player -->
@@ -33,6 +38,12 @@
     </div>
   </div>
 
+  <script>
+    // Add fade-in once loaded
+    window.addEventListener("load", () => {
+      document.body.classList.add("loaded");
+    });
+  </script>
   <script src="script.js"></script>
 </body>
 </html>
