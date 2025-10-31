@@ -1,0 +1,42 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Batch Film Wall</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header class="hero">
+    <div class="container">
+      <h1>Batch Film Wall</h1>
+      <p class="subtitle">Auto-build film wall from a Google Drive folder</p>
+      <div class="controls">
+        <input id="endpointInput" placeholder="Apps Script JSON URL" />
+        <button id="loadBtn">Load Folder</button>
+      </div>
+      <small class="hint">Tip: paste your Apps Script web app URL (public), then click Load.</small>
+    </div>
+  </header>
+
+  <main class="container">
+    <section id="wall" class="grid"></section>
+  </main>
+
+  <!-- Modal player -->
+  <div id="modal" class="modal hidden">
+    <div class="modal-content">
+      <button id="closeModal" class="close">✕</button>
+      <div id="playerArea"></div>
+      <div class="player-controls">
+        <button id="prevBtn">Prev</button>
+        <button id="nextBtn">Next</button>
+        <button id="toggleMusic">Toggle Music</button>
+        <span id="fileTitle"></span>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
