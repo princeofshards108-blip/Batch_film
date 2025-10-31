@@ -4,7 +4,7 @@
 // ================================
 
 // 👇 Replace this with YOUR Google Apps Script Web App URL
-const scriptURL = "https://script.google.com/macros/s/AKfycbyKL6xqkA83Qd0SMwF9494GKoRbN1hoLMc7JKUlEH_3bt-K-zhO0dgkVuoVTp20Yags/exec";
+const scriptURL = "https://script.google.com/macros/s/AKfycbzPEcSyqO4Mqo24KeU8RGuf1Di8SqzhjcGgEMd6-yW35fW3tXfTMq3XokBLWqXSjin-/exec";
 
 // Wait until the page finishes loading
 document.addEventListener("DOMContentLoaded", loadDriveFiles);
