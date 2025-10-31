@@ -3,47 +3,37 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Batch Film Wall</title>
+  <title>Batch Film — Auto Generator</title>
   <link rel="stylesheet" href="style.css" />
-  <style>
-    /* quick fade-in for cinematic feel */
-    body { opacity: 0; transition: opacity 1s ease; }
-    body.loaded { opacity: 1; }
-  </style>
 </head>
 <body>
-  <header class="hero">
-    <div class="container">
-      <h1>🎞️ Batch Film Wall</h1>
-      <p class="subtitle">Auto-generated film gallery powered by Google Drive</p>
-      <small class="hint">Loading your Drive content... please wait.</small>
-    </div>
-  </header>
-
-  <main class="container">
-    <section id="gallery" class="grid"></section>
-  </main>
-
-  <!-- Modal player -->
-  <div id="modal" class="modal hidden">
-    <div class="modal-content">
-      <button id="closeModal" class="close">✕</button>
-      <div id="playerArea"></div>
-      <div class="player-controls">
-        <button id="prevBtn">Prev</button>
-        <button id="nextBtn">Next</button>
-        <button id="toggleMusic">Toggle Music</button>
-        <span id="fileTitle"></span>
-      </div>
+  <div id="splash" class="splash">
+    <div class="splash-inner">
+      <h1>Batch Film</h1>
+      <p class="tag">Auto-generated from Drive — one pass, cinematic</p>
+      <button id="startBtn" class="btn-primary">PLAY FILM</button>
+      <p class="hint">Make sure your Drive folder in the Apps Script is public and your script is the deployed /exec URL.</p>
     </div>
   </div>
 
-  <script>
-    // Add fade-in once loaded
-    window.addEventListener("load", () => {
-      document.body.classList.add("loaded");
-    });
-  </script>
+  <main id="stage" class="stage hidden">
+    <div id="viewport" class="viewport">
+      <!-- dynamic media elements inserted here -->
+      <div id="caption" class="caption"></div>
+    </div>
+
+    <div class="controls bottom">
+      <div id="progressWrap" class="progressWrap">
+        <div id="progressBar" class="progressBar"></div>
+      </div>
+      <div class="control-row">
+        <button id="pauseBtn" class="btn-small">Pause</button>
+        <div id="status" class="status">Loading...</div>
+        <button id="replayBtn" class="btn-small hidden">Replay</button>
+      </div>
+    </div>
+  </main>
+
   <script src="script.js"></script>
 </body>
 </html>
